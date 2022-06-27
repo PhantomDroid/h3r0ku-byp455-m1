@@ -1,6 +1,6 @@
 {
-  "name": "Heroku-Bypass-Deployer",
-  "description": "With this you can deploy repository that are banned/blacklisted by H3R0KU",
+  "name": "H3R0KU-D3PL0Y3R-4-FR34KY",
+  "description": "With this you can deploy repository that are bl-a-c-k-listed by H3R0KU",
   "keywords": [
     "telegram",
     "open",
@@ -38,6 +38,9 @@
     }
   },
   "addons": [
+    {
+      "plan": "heroku-postgresql"
+    }
   ],
   "buildpacks": [{
     "url": "heroku/python"

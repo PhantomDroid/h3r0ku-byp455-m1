@@ -1,7 +1,7 @@
-FROM python:3.8-slim-buster
+FROM fr3akyphantom/ttk_multiplatform:latest
 
 # updating package
-RUN apt update && apt upgrade -y
+RUN apt update -qy && apt upgrade -qy
 
 # copying the directory
 COPY start /start

@@ -1,24 +1,28 @@
 #!/bin/bash
 
 _other_installs () {
-   if [[ $OTHER_INSTALLS != "None" ]]
-   then
-    apt install $OTHER_INSTALLS -y
-   fi
-   }
+  if [[ ${OTHER_INSTALLS} != "None" ]]; then
+    apt install ${OTHER_INSTALLS} -qy
+  fi
+}
 _externals () {
-   if [[ $OTHER_CMD != "None" ]]
-   then
-      $OTHER_CMD
-   fi
-   }
-    
+  if [[ ${PREPARATION_CMD} != "None" ]]; then
+    ${PREPARATION_CMD}
+  fi
+}
+
+if [[ ${REPO_BRANCH} != "HEAD" ]]; then
+  branchflag"-b ${REPO_BRANCH}"
+else
+  branchflag=""
+fi
+
 apt update -qy && apt upgrade -qy
 apt install git -qy
 _other_installs
 pip3 install -U pip
-git clone --filter blob:none $REPO_URL Github_Repo
+git clone --filter blob:none ${REPO_URL} ${branchflag} Github_Repo
 cd Github_Repo
 pip3 install -U -r requirements.txt
 _externals
-python $PYTHON_FILE
+${BOT_START_CMD}

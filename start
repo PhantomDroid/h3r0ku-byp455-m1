@@ -13,11 +13,11 @@ _externals () {
    fi
    }
     
-apt update && apt upgrade -y
-apt install git -y
+apt update -qy && apt upgrade -qy
+apt install git -qy
 _other_installs
 pip3 install -U pip
-git clone $REPO_URL Github_Repo
+git clone --filter blob:none $REPO_URL Github_Repo
 cd Github_Repo
 pip3 install -U -r requirements.txt
 _externals

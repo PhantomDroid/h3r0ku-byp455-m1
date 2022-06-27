@@ -1,6 +1,6 @@
 {
   "name": "Heroku-Bypass-Deployer",
-  "description": "With this you can deploy repository that are banned/blacklisted by heroku",
+  "description": "With this you can deploy repository that are banned/blacklisted by H3R0KU",
   "keywords": [
     "telegram",
     "open",
@@ -21,15 +21,20 @@
       "value": "https://github.com/levina-lab/video-stream",
       "required": true
     },
-    "PYTHON_FILE": {
-      "description": "Name of the python file that you need to run [use -m if you need to run __main__.py from a folder]",
-      "value": "main.py",
-      "required": true
+    "REPO_BRANCH": {
+      "description": "Enter the repository branch name if not default HEAD",
+      "value": "HEAD",
+      "required": false
     },
-     "OTHER_CMD": {
-      "description": "If you need to run any bash command other than python specify here",
+     "PREPARATION_CMD": {
+      "description": "If you need to run any bash commands before running the bot, specify here",
       "value": "None",
       "required": false
+    },
+    "BOT_START_CMD": {
+      "description": "Full command which starts your bot, either python command or bash command [use -m if you need to run __main__.py from a folder]",
+      "value": "python3 -m main.py",
+      "required": true
     }
   },
   "addons": [

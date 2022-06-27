@@ -1,6 +1,6 @@
-### Heroku-Bypass-Deployer
+### H3R0KU-D3PL0Y3R
 
-With this you can deploy repository that are banned/blacklisted by heroku in different platforms.
+With this you can deploy repository that are bl-a-c-k-listed by H3R0KU in different platforms.
 
 ### Deploy To Heroku
 
